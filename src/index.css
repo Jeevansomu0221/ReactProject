@@ -1,0 +1,357 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f7f8f9;
+  --color-white: #ffffff;
+  --color-primary: #6c27ff;
+  --color-primary-light: #cebcfe;
+  --color-text-dark: #1d2226;
+  --color-text-gray: #6c757d;
+  --color-text-muted: #6b7280;
+  --color-label: #6366f1;
+  --color-border: #d1d5db;
+  --color-btn-disabled: #cbcbcb;
+  --color-profile-bg: #f8f8f8;
+  --color-required: #ef4444;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  --mobile-width: 375px;
+  --mobile-height: 812px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #e8e8e8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.mobile-frame {
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  background-color: var(--color-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-frame--scroll {
+  overflow-y: auto;
+}
+
+.mobile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+}
+
+.mobile-content--bottom {
+  justify-content: flex-end;
+  padding-bottom: 48px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-gray);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-dark);
+  margin-top: 12px;
+}
+
+.btn-disabled {
+  background-color: var(--color-btn-disabled);
+  color: var(--color-white);
+  cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+  opacity: 1;
+}
+
+.btn-active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.floating-input-wrapper {
+  position: relative;
+}
+
+.floating-input-wrapper label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background-color: var(--color-bg);
+  padding: 0 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-label);
+  z-index: 1;
+}
+
+.floating-input-wrapper label .required {
+  color: var(--color-required);
+}
+
+.floating-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  color: var(--color-text-dark);
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.floating-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.floating-input:focus {
+  border-color: var(--color-label);
+}
+
+.radio-group {
+  margin-bottom: 24px;
+}
+
+.radio-group-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-bottom: 12px;
+}
+
+.radio-group-label .required {
+  color: var(--color-required);
+}
+
+.radio-options {
+  display: flex;
+  gap: 24px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-option input[type='radio'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.radio-option input[type='radio']:checked {
+  border-color: var(--color-primary);
+}
+
+.radio-option input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.radio-option span {
+  font-size: 15px;
+  color: var(--color-text-dark);
+}
+
+.signup-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form .btn-primary {
+  margin-top: auto;
+}
+
+.account-header {
+  background-color: var(--color-white);
+  padding: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.account-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.profile-section {
+  background-color: var(--color-profile-bg);
+  padding: 20px;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-edit {
+  position: absolute;
+  bottom: 0;
+  right: -2px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-white);
+  cursor: pointer;
+}
+
+.avatar-edit svg {
+  width: 12px;
+  height: 12px;
+  fill: var(--color-white);
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: var(--color-text-gray);
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: var(--color-text-gray);
+  line-height: 1.6;
+}
+
+.settings-section {
+  flex: 1;
+  background-color: var(--color-white);
+  border-top: 1px dashed #d1d5db;
+  border-bottom: 1px dashed #d1d5db;
+}
+
+.login-form {
+  margin-top: 8px;
+}
+
+.login-form .btn {
+  margin-top: 8px;
+}
+
+@media (max-width: 420px) {
+  .app-wrapper {
+    padding: 0;
+  }
+
+  .mobile-frame {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
