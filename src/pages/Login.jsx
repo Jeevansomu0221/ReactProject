@@ -18,7 +18,7 @@ function Login() {
   };
 
   return (
-    <MobileLayout scrollable>
+    <MobileLayout>
       <div className="mobile-content">
         <h1 className="page-title">Signin to your PopX account</h1>
         <p className="page-subtitle">

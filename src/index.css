@@ -21,8 +21,8 @@
   --color-required: #ef4444;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     sans-serif;
-  --mobile-width: 375px;
-  --mobile-height: 812px;
+  --mobile-width: 320px;
+  --mobile-height: 580px;
 }
 
 html,
@@ -56,48 +56,46 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.mobile-frame--scroll {
-  overflow-y: auto;
+  flex-shrink: 0;
 }
 
 .mobile-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 24px 20px;
+  padding: 16px;
+  overflow: hidden;
 }
 
 .mobile-content--bottom {
   justify-content: flex-end;
-  padding-bottom: 48px;
+  padding-bottom: 32px;
 }
 
 .page-title {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--color-text-dark);
-  line-height: 1.3;
-  margin-bottom: 8px;
+  line-height: 1.25;
+  margin-bottom: 6px;
 }
 
 .page-subtitle {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--color-text-gray);
-  line-height: 1.5;
-  margin-bottom: 32px;
+  line-height: 1.4;
+  margin-bottom: 20px;
 }
 
 .btn {
   display: block;
   width: 100%;
-  padding: 14px 16px;
+  padding: 11px 14px;
   border: none;
   border-radius: 8px;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
@@ -121,7 +119,7 @@ body {
 .btn-secondary {
   background-color: var(--color-primary-light);
   color: var(--color-text-dark);
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .btn-disabled {
@@ -140,7 +138,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .floating-input-wrapper {
@@ -165,11 +163,11 @@ body {
 
 .floating-input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 10px 12px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
   font-family: var(--font-family);
-  font-size: 15px;
+  font-size: 13px;
   color: var(--color-text-dark);
   background-color: transparent;
   outline: none;
@@ -185,14 +183,14 @@ body {
 }
 
 .radio-group {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .radio-group-label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .radio-group-label .required {
@@ -213,8 +211,8 @@ body {
 
 .radio-option input[type='radio'] {
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--color-border);
   border-radius: 50%;
   cursor: pointer;
@@ -232,14 +230,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-color: var(--color-primary);
   border-radius: 50%;
 }
 
 .radio-option span {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--color-text-dark);
 }
 
@@ -247,34 +245,39 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
 }
 
 .signup-form .btn-primary {
-  margin-top: auto;
+  margin-top: 4px;
+  flex-shrink: 0;
 }
 
 .account-header {
   background-color: var(--color-white);
-  padding: 20px;
+  padding: 14px 16px;
   border-bottom: 1px solid #eeeeee;
+  flex-shrink: 0;
 }
 
 .account-header h1 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--color-text-dark);
 }
 
 .profile-section {
   background-color: var(--color-profile-bg);
-  padding: 20px;
+  padding: 14px 16px;
+  flex-shrink: 0;
 }
 
 .profile-top {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
 .avatar-wrapper {
@@ -283,8 +286,8 @@ body {
 }
 
 .avatar {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -293,8 +296,8 @@ body {
   position: absolute;
   bottom: 0;
   right: -2px;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   background-color: var(--color-primary);
   border-radius: 50%;
   display: flex;
@@ -305,27 +308,27 @@ body {
 }
 
 .avatar-edit svg {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   fill: var(--color-white);
 }
 
 .profile-info h2 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .profile-info p {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-text-gray);
 }
 
 .profile-bio {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-text-gray);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .settings-section {
@@ -333,25 +336,25 @@ body {
   background-color: var(--color-white);
   border-top: 1px dashed #d1d5db;
   border-bottom: 1px dashed #d1d5db;
+  min-height: 0;
 }
 
 .login-form {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .login-form .btn {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 360px) {
   .app-wrapper {
-    padding: 0;
+    padding: 12px 8px;
   }
 
   .mobile-frame {
     width: 100%;
-    height: 100vh;
-    border-radius: 0;
-    box-shadow: none;
+    max-width: var(--mobile-width);
+    height: var(--mobile-height);
   }
 }

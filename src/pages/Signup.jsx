@@ -24,7 +24,7 @@ function Signup() {
   };
 
   return (
-    <MobileLayout scrollable>
+    <MobileLayout>
       <div className="mobile-content">
         <h1 className="page-title">Create your PopX account</h1>
 
