@@ -32,4 +32,5 @@ npm run build
 
 ## Live Demo
 
-Hosted on Vercel — see repository for deployment link.
+- **GitHub Pages:** https://jeevansomu0221.github.io/ReactProject/
+- **Netlify:** https://stellar-belekoy-f35657.netlify.app
